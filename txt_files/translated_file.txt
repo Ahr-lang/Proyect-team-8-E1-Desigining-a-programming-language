@@ -1,0 +1,41 @@
+// Basic arithmetic
+a = 5 + 3 // Add integers
+b = 10 - 2.5
+c = 4 * - 3.14
+d = 20 / 7
+// Scientific notation
+e = 6.022e23
+f = - 1.6e - 19
+g = 9.8E + 5
+// Edge cases
+h = -.0005e - 10
+i = 9999999999999999999.9999999999999999999
+j = 1_000_000_000
+k = 5.5.5
+// Special cases
+l = 5 * - + - + 3
+m = 1 / 0
+n =(a + b) *(c - d) / e ^ 5
+// Invalid tokens
+p = @ # ! $ % ^
+q = 123abc
+// Logical expressions in Latin
+r = True and False
+s = not True or False
+t = True or not False and True
+// Variable and conditional
+if a > b:\n return True \n else:\n return False
+// Multiple branches
+if x < y:\n return x \n elif x > y:\n return y \n else:\n return None
+// Function definition with logic
+def comparare(x,y):\n if x = = y:\n return True \n else:\n return False
+// Function with arithmetic
+def potenzia(basis,exponentia):\n return basis ^ exponentia
+// Latin - style variable declarations
+numerus = 42
+pi = 3.14159
+salutatio = " Ave,mundus ! "
+flag = True
+tempus = - 273.15
+// Boolean expressions in functions
+def affirmatio(v):\n if v is True:\n return " affirmatum " \n else:\n return " negatum "
