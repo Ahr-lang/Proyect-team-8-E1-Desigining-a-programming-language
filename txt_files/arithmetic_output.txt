@@ -1,14 +1,18 @@
 Lexical Analysis Output:
 
-LINE 1: // Basic arithmetic
-Comment               // Basic arithmetic
-LINE 2: a = 5 + 3 // Add integers
+LINE 1: # Basic arithmetic
+Unrecognized          #
+Variable              Basic
+Variable              arithmetic
+LINE 2: a = 5 + 3 # Add integers
 Variable              a
 Assignment            =
 Integer               5
 Addition              +
 Integer               3
-Comment               // Add integers
+Unrecognized          #
+Variable              Add
+Variable              integers
 LINE 3: b = 10 - 2.5
 Variable              b
 Assignment            =
@@ -28,53 +32,59 @@ Assignment            =
 Integer               20
 Division              /
 Integer               7
-LINE 6: // Scientific notation
-Comment               // Scientific notation
-LINE 7: e = 6.022e23
+LINE 7: # Scientific notation
+Unrecognized          #
+Variable              Scientific
+Variable              notation
+LINE 8: e = 6.022e23
 Variable              e
 Assignment            =
 Float                 6.022e23
-LINE 8: f = - 1.6e - 19
+LINE 9: f = - 1.6e-19
 Variable              f
 Assignment            =
 Subtraction           -
-Float                 1.6
-Variable              e
-Subtraction           -
-Integer               19
-LINE 9: g = 9.8E + 5
+Float                 1.6e-19
+LINE 10: g = 9.8E+5
 Variable              g
 Assignment            =
-Float                 9.8
-Variable              E
-Addition              +
-Integer               5
-LINE 10: // Edge cases
-Comment               // Edge cases
-LINE 11: h = -.0005e - 10
+Float                 9.8E+5
+LINE 12: # Edge cases
+Unrecognized          #
+Variable              Edge
+Variable              cases
+LINE 13: h = -.0005e-10
 Variable              h
 Assignment            =
-Float                 -.0005
-Variable              e
-Subtraction           -
-Integer               10
-LINE 12: i = 9999999999999999999.9999999999999999999
+Float                 -.0005e-10
+LINE 14: i = 9999999999999999999.9999999999999999999
 Variable              i
 Assignment            =
 Float                 9999999999999999999.9999999999999999999
-LINE 13: j = 1_000_000_000
+LINE 15: j = 1_000_000_000
 Variable              j
 Assignment            =
 Integer               1000000000
 Integer               000
-LINE 14: k = 5.5.5
+LINE 16: k = 5.5.5 # Invalid float(allowed for test purposes)
 Variable              k
 Assignment            =
 Float                 5.5
 Float                 .5
-LINE 15: // Special cases
-Comment               // Special cases
-LINE 16: l = 5 * - + - + 3
+Unrecognized          #
+Variable              Invalid
+Variable              float
+Open Parenthesis      (
+Variable              allowed
+Keyword               for
+Variable              test
+Variable              purposes
+Close Parenthesis     )
+LINE 18: # Special cases
+Unrecognized          #
+Variable              Special
+Variable              cases
+LINE 19: l = 5 * - + - + 3 # Invalid unary chain(for testing)
 Variable              l
 Assignment            =
 Integer               5
@@ -84,13 +94,21 @@ Addition              +
 Subtraction           -
 Addition              +
 Integer               3
-LINE 17: m = 1 / 0
+Unrecognized          #
+Variable              Invalid
+Variable              unary
+Variable              chain
+Open Parenthesis      (
+Keyword               for
+Variable              testing
+Close Parenthesis     )
+LINE 20: m = 1 / 0
 Variable              m
 Assignment            =
 Integer               1
 Division              /
 Integer               0
-LINE 18: n =(a + b) *(c - d) / e ^ 5
+LINE 21: n =(a + b) *(c - d) / e ** 5 # Exponentiation corrected
 Variable              n
 Assignment            =
 Open Parenthesis      (
@@ -106,11 +124,17 @@ Variable              d
 Close Parenthesis     )
 Division              /
 Variable              e
-Power                 ^
+Multiplication        *
+Multiplication        *
 Integer               5
-LINE 19: // Invalid tokens
-Comment               // Invalid tokens
-LINE 20: p = @ # ! $ % ^
+Unrecognized          #
+Variable              Exponentiation
+Variable              corrected
+LINE 23: # Invalid tokens
+Unrecognized          #
+Variable              Invalid
+Variable              tokens
+LINE 24: p = @ # ! $ % ^ # Invalid tokens(left in for test)
 Variable              p
 Assignment            =
 Unrecognized          @
@@ -119,27 +143,43 @@ Unrecognized          !
 Unrecognized          $
 Unrecognized          %
 Power                 ^
-LINE 21: q = 123abc
+Unrecognized          #
+Variable              Invalid
+Variable              tokens
+Open Parenthesis      (
+Variable              left
+Keyword               in
+Keyword               for
+Variable              test
+Close Parenthesis     )
+LINE 25: q = 123abc # Invalid identifier
 Variable              q
 Assignment            =
 Integer               123
 Variable              abc
-LINE 22: // Logical expressions in Latin
-Comment               // Logical expressions in Latin
-LINE 23: r = True and False
+Unrecognized          #
+Variable              Invalid
+Variable              identifier
+LINE 27: # Logical expressions in Latin
+Unrecognized          #
+Variable              Logical
+Variable              expressions
+Keyword               in
+Variable              Latin
+LINE 28: r = True and False
 Variable              r
 Assignment            =
 Boolean               True
 Logical Operator      and
 Boolean               False
-LINE 24: s = not True or False
+LINE 29: s = not True or False
 Variable              s
 Assignment            =
 Logical Operator      not
 Boolean               True
 Logical Operator      or
 Boolean               False
-LINE 25: t = True or not False and True
+LINE 30: t = True or not False and True
 Variable              t
 Assignment            =
 Boolean               True
@@ -148,52 +188,61 @@ Logical Operator      not
 Boolean               False
 Logical Operator      and
 Boolean               True
-LINE 26: // Variable and conditional
-Comment               // Variable and conditional
-LINE 27: if a > b:\n return True \n else:\n return False
+LINE 32: # Variable and conditional
+Unrecognized          #
+Variable              Variable
+Logical Operator      and
+Variable              conditional
+LINE 33: if a > b:
 Keyword               if
 Variable              a
 Greater Than          >
 Variable              b
 Colon                 :
-Escape Sequence       \n
+LINE 34:     return True
 Keyword               return
 Boolean               True
-Escape Sequence       \n
+LINE 35: else:
 Keyword               else
 Colon                 :
-Escape Sequence       \n
+LINE 36:     return False
 Keyword               return
 Boolean               False
-LINE 28: // Multiple branches
-Comment               // Multiple branches
-LINE 29: if x < y:\n return x \n elif x > y:\n return y \n else:\n return None
+LINE 38: # Multiple branches
+Unrecognized          #
+Variable              Multiple
+Variable              branches
+LINE 39: if x < y:
 Keyword               if
 Variable              x
 Less Than             <
 Variable              y
 Colon                 :
-Escape Sequence       \n
+LINE 40:     return x
 Keyword               return
 Variable              x
-Escape Sequence       \n
+LINE 41: elif x > y:
 Keyword               elif
 Variable              x
 Greater Than          >
 Variable              y
 Colon                 :
-Escape Sequence       \n
+LINE 42:     return y
 Keyword               return
 Variable              y
-Escape Sequence       \n
+LINE 43: else:
 Keyword               else
 Colon                 :
-Escape Sequence       \n
+LINE 44:     return None
 Keyword               return
 Variable              None
-LINE 30: // Function definition with logic
-Comment               // Function definition with logic
-LINE 31: def comparare(x,y):\n if x = = y:\n return True \n else:\n return False
+LINE 46: # Function definition with logic
+Unrecognized          #
+Variable              Function
+Variable              definition
+Variable              with
+Variable              logic
+LINE 47: def comparare(x,y):
 Keyword               def
 Variable              comparare
 Open Parenthesis      (
@@ -202,25 +251,27 @@ Comma                 ,
 Variable              y
 Close Parenthesis     )
 Colon                 :
-Escape Sequence       \n
+LINE 48:     if x == y:
 Keyword               if
 Variable              x
-Assignment            =
-Assignment            =
+Equal To              ==
 Variable              y
 Colon                 :
-Escape Sequence       \n
+LINE 49:         return True
 Keyword               return
 Boolean               True
-Escape Sequence       \n
+LINE 50:     else:
 Keyword               else
 Colon                 :
-Escape Sequence       \n
+LINE 51:         return False
 Keyword               return
 Boolean               False
-LINE 32: // Function with arithmetic
-Comment               // Function with arithmetic
-LINE 33: def potenzia(basis,exponentia):\n return basis ^ exponentia
+LINE 53: # Function with arithmetic
+Unrecognized          #
+Variable              Function
+Variable              with
+Variable              arithmetic
+LINE 54: def potenzia(basis,exponentia):
 Keyword               def
 Variable              potenzia
 Open Parenthesis      (
@@ -229,55 +280,65 @@ Comma                 ,
 Variable              exponentia
 Close Parenthesis     )
 Colon                 :
-Escape Sequence       \n
+LINE 55:     return basis ** exponentia
 Keyword               return
 Variable              basis
-Power                 ^
+Multiplication        *
+Multiplication        *
 Variable              exponentia
-LINE 34: // Latin - style variable declarations
-Comment               // Latin - style variable declarations
-LINE 35: numerus = 42
+LINE 57: # Latin - style variable declarations
+Unrecognized          #
+Variable              Latin
+Subtraction           -
+Variable              style
+Variable              variable
+Variable              declarations
+LINE 58: numerus = 42
 Variable              numerus
 Assignment            =
 Integer               42
-LINE 36: pi = 3.14159
+LINE 59: pi = 3.14159
 Variable              pi
 Assignment            =
 Float                 3.14159
-LINE 37: salutatio = " Ave,mundus ! "
+LINE 60: salutatio = " Ave,mundus ! "
 Variable              salutatio
 Assignment            =
 String                " Ave,mundus ! "
-LINE 38: flag = True
+LINE 61: flag = True
 Variable              flag
 Assignment            =
 Boolean               True
-LINE 39: tempus = - 273.15
+LINE 62: tempus = - 273.15
 Variable              tempus
 Assignment            =
 Subtraction           -
 Float                 273.15
-LINE 40: // Boolean expressions in functions
-Comment               // Boolean expressions in functions
-LINE 41: def affirmatio(v):\n if v is True:\n return " affirmatum " \n else:\n return " negatum "
+LINE 64: # Boolean expressions in functions
+Unrecognized          #
+Variable              Boolean
+Variable              expressions
+Keyword               in
+Variable              functions
+LINE 65: def affirmatio(v):
 Keyword               def
 Variable              affirmatio
 Open Parenthesis      (
 Variable              v
 Close Parenthesis     )
 Colon                 :
-Escape Sequence       \n
+LINE 66:     if v is True:
 Keyword               if
 Variable              v
 Variable              is
 Boolean               True
 Colon                 :
-Escape Sequence       \n
+LINE 67:         return " affirmatum "
 Keyword               return
 String                " affirmatum "
-Escape Sequence       \n
+LINE 68:     else:
 Keyword               else
 Colon                 :
-Escape Sequence       \n
+LINE 69:         return " negatum "
 Keyword               return
 String                " negatum "

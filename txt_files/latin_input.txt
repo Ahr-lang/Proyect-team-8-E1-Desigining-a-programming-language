@@ -1,41 +1,52 @@
-// Basic arithmetic
-a = 5 + 3 // Add integers
+# Basic arithmetic
+a = 5 + 3 # Add integers
 b = 10 - 2.5
 c = 4 * -3.14
 d = 20 / 7
-// Scientific notation
+
+# Scientific notation
 e = 6.022e23
 f = -1.6e-19
 g = 9.8E+5
-// Edge cases
+
+# Edge cases
 h = -.0005e-10
 i = 9999999999999999999.9999999999999999999
 j = 1_000_000_000
-k = 5.5.5
-// Special cases
-l = 5 * -+-+3
+k = 5.5.5  # Invalid float (allowed for test purposes)
+
+# Special cases
+l = 5 * -+-+3  # Invalid unary chain (for testing)
 m = 1 / 0
-n = (a + b) * (c - d) / e ^ 5
-// Invalid tokens
-p = @#!$%^
-q = 123abc
-// Logical expressions in Latin
+n = (a + b) * (c - d) / e ** 5  # Exponentiation corrected
+
+# Invalid tokens
+p = @#!$%^  # Invalid tokens (left in for test)
+q = 123abc  # Invalid identifier
+
+# Logical expressions in Latin
 r = Verum et Falsum
 s = non Verum vel Falsum
 t = Verum vel non Falsum et Verum
-// Variable and conditional
+
+# Variable and conditional
 si a > b:\n    redde Verum\nalioquin:\n    redde Falsum
-// Multiple branches
+
+# Multiple branches
 si x < y:\n    redde x\naliter_si x > y:\n    redde y\nalioquin:\n    redde Nullum
-// Function definition with logic
+
+# Function definition with logic
 definio comparare(x, y):\n    si x == y:\n        redde Verum\n    alioquin:\n        redde Falsum
-// Function with arithmetic
-definio potenzia(basis, exponentia):\n    redde basis ^ exponentia
-// Latin-style variable declarations
+
+# Function with arithmetic
+definio potenzia(basis, exponentia):\n    redde basis ** exponentia
+
+# Latin-style variable declarations
 numerus = 42
 pi = 3.14159
 salutatio = "Ave, mundus!"
 flag = Verum
 tempus = -273.15
-// Boolean expressions in functions
+
+# Boolean expressions in functions
 definio affirmatio(v):\n    si v est Verum:\n        redde "affirmatum"\n    alioquin:\n        redde "negatum"
