@@ -1,0 +1,6 @@
+-- Data Base Connection Credentials --
+URL: srvdb2025.database.windows.net
+USR: adminsa
+PW: Ec$r57#30
+Trust Certificate: Enabled
+Encrypt: Mandatory
